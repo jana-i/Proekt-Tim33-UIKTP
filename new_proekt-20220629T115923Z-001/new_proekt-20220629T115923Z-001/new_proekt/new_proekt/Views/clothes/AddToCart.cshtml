@@ -1,0 +1,119 @@
+﻿@model  new_proekt.Models.clothes
+
+@{
+    ViewBag.Title = "AddToCart";
+}
+
+
+
+<html>
+<body>
+    <br />
+    <br />
+    <br />
+
+    <section class="h-100 h-custom">
+        <div class="container h-100 py-5">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr><th scope="col">Items</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        <div class="d-flex align-items-center">
+                                            <img src="@Html.DisplayFor(model => model.ImageURL)" class="img-fluid rounded-3"
+                                                 style="width: 120px;" alt="Book">
+                                            <div class="flex-column ms-4">
+                                                <p class="mb-2">@Html.DisplayFor(model => model.Name)</p>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <td class="align-middle">
+                                        <div class="d-flex flex-row">
+                                            <button class="btn btn-link px-2"
+                                                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+
+                                            <input id="form1" min="0" name="quantity" value="1" type="number"
+                                                   class="form-control form-control-sm" style="width: 50px;" />
+
+                                            <button class="btn btn-link px-2"
+                                                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle">
+                                        <br />
+                                        <p class="mb-0" style="font-weight: 500; font-size: 20px;">$@Html.DisplayFor(model => model.Price)</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-block btn-lg">
+                        <div class="d-flex justify-content-between">
+                            <span style="font-size: 20px;">Checkout</span>
+                            <span style="font-size: 20px;">@Html.DisplayFor(model => model.Price)$</span>
+                        </div>
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+ 
+    
+
+
+    @*<div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="@Html.DisplayFor(model => model.ImageURL)" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">@Html.DisplayFor(model => model.Name)</h5>
+                            <p class="card-text">@Html.DisplayFor(model => model.Price)$</p>
+                        </div>
+                    </div>
+                </div>
+        </div>*@
+</body>
+</html>
+<style>
+    body, html {
+        background-color: #D3D3D3;
+        font-family: math;
+    }
+    .h-custom {
+        height: 100vh !important;
+        width: 1025px
+    }
+    .mb-2 {
+        position: relative;
+        left: 150px;
+        bottom: 100px;
+    }
+    th{
+        font-size: 20px;
+    }
+    img {
+        width: 130px;
+        height: 160px;
+    }
+    
+
+</style>
